@@ -10,3 +10,4 @@ public enum Attività {
 }
 
 //commento di prova git
+//commento di prova #2
