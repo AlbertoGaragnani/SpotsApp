@@ -8,3 +8,5 @@ public enum Attività {
 	CLIFFDIVING,
 	PARKOUR
 }
+
+//commento di prova git
