@@ -6,8 +6,7 @@ public enum Attività {
 	FRISBEE,
 	BASKETBALL,
 	CLIFFDIVING,
-	PARKOUR,
-	HDISSMS
+	PARKOUR
 }
 
 //commento di prova git
