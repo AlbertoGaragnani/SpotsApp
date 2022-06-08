@@ -2,6 +2,7 @@ package model_test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +12,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import model.Attività;
-import model.Privilegio;
-import model.Recensione;
-import model.Spot;
-import model.Utente;
+import model.*;
 
 class TestSpot {
 	
@@ -24,9 +21,9 @@ class TestSpot {
 
 	@BeforeEach
 	public void setUp() {
-		List<Attività> attivita = new ArrayList<>();
-		attivita.add(Attività.BASKETBALL);
-		attivita.add(Attività.SKATEBOARDING);
+		List<Attivita> attivita = new ArrayList<>();
+		attivita.add(Attivita.BASKETBALL);
+		attivita.add(Attivita.SKATEBOARDING);
 		List<Recensione> recensioni = new ArrayList<>();
 		recensioni.add(new Recensione("RE002", 5, Optional.empty(), Optional.empty(), Optional.empty()));
 		File[] immagini = new File[2];
@@ -45,7 +42,7 @@ class TestSpot {
 		assertEquals(spot.getImmagini().length, 2);
 		assertEquals(spot.getPresenzeSegnalate(), 0);
 		assertNull(spot.getAffluenza());
-		assertEquals(spot.getAttività().get(0), Attività.BASKETBALL);
+		assertEquals(spot.getAttivita().get(0), Attivita.BASKETBALL);
 		assertThrows(NoSuchElementException.class, () -> spot.getRecensioni().get(0).getDescrizione().get());
 	}
 

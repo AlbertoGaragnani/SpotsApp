@@ -1,6 +1,8 @@
 package model;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,16 +14,18 @@ public class Spot {
 	private String indirizzo;
 	private File[] immagini;
 	private int presenzeSegnalate;
-	private List<Attività> attività;
+	private List<Attivita> attivita;
 	private Map<String, Double> affluenza;
 	private List<Recensione> recensioni;
 	
 	public Spot() {
-		
+		this.attivita = new ArrayList<>();
+		this.affluenza = new HashMap<>();
+		this.recensioni = new ArrayList<>();
 	}
 
 	public Spot(String id, String usernameUtente, String nome, String indirizzo, File[] immagini,
-			List<Attività> attività, Map<String, Double> affluenza, List<Recensione> recensioni) {
+			List<Attivita> attività, Map<String, Double> affluenza, List<Recensione> recensioni) {
 		super();
 		this.id = id;
 		this.usernameUtente = usernameUtente;
@@ -29,7 +33,7 @@ public class Spot {
 		this.indirizzo = indirizzo;
 		this.immagini = immagini;
 		this.presenzeSegnalate = 0;
-		this.attività = attività;
+		this.attivita = attività;
 		this.affluenza = affluenza;
 		this.recensioni = recensioni;
 	}
@@ -82,13 +86,24 @@ public class Spot {
 		this.presenzeSegnalate = presenzeSegnalate;
 	}
 
-	public List<Attività> getAttività() {
-		return attività;
+	public List<Attivita> getAttivita() {
+		return attivita;
 	}
 
-	public void setAttività(List<Attività> attività) {
-		this.attività = attività;
+	public void setAttivita(List<Attivita> attività) {
+		this.attivita = attività;
 	}
+	
+	public void setAttivita(Attivita attivita) {
+		if(this.getAttivita().isEmpty())
+		{
+			this.attivita = new ArrayList<>();
+			this.attivita.add(attivita);
+		}
+		else
+			this.attivita.add(attivita);
+	}
+	
 
 	public Map<String, Double> getAffluenza() {
 		return affluenza;

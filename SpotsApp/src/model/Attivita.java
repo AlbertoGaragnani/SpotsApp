@@ -1,6 +1,6 @@
 package model;
 
-public enum Attività {
+public enum Attivita {
 	SKATEBOARDING,
 	SURF,
 	FRISBEE,
